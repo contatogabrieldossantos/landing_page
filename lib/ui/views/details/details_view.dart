@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:landing_app/ui/charts/bar_chart/skills_chart.dart';
 import 'package:landing_app/ui/common/app_strings.dart';
 import 'package:landing_app/ui/drawer/drawer.dart';
 import 'package:stacked/stacked.dart';
@@ -41,6 +42,14 @@ class DetailsView extends StackedView<DetailsViewModel> {
                     ),
                     const Text(
                       ksDetailsStorieBottomSheetDescription,
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w900,
+                      ),
+                    ),
+                    const SkillsChart(),
+                    const Text(
+                      ksDetailsStorieBottomSheetDescriptionBottom,
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w900,

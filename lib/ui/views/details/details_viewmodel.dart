@@ -1,5 +1,4 @@
 import 'package:landing_app/app/app.bottomsheets.dart';
-import 'package:landing_app/app/app.dialogs.dart';
 import 'package:landing_app/app/app.locator.dart';
 import 'package:landing_app/ui/common/app_strings.dart';
 import 'package:stacked/stacked.dart';
@@ -16,7 +15,7 @@ class DetailsViewModel extends BaseViewModel {
 
   void showBottomSheet() {
     _bottomSheetService.showCustomSheet(
-      variant: BottomSheetType.notice,
+      variant: BottomSheetType.noticeContact,
       title: ksDetailsBottomSheetTitle,
       description: ksDetailsBottomSheetDescription,
     );

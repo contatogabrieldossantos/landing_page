@@ -27,6 +27,11 @@ Widget spacedDivider = const Column(
   ],
 );
 
+const styleDetails = TextStyle(
+  fontSize: 16,
+  fontWeight: FontWeight.w900,
+);
+
 Widget verticalSpace(double height) => SizedBox(height: height);
 
 double screenWidth(BuildContext context) => MediaQuery.of(context).size.width;

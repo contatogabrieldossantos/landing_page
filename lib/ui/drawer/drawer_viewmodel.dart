@@ -10,6 +10,10 @@ class DrawerViewModel extends BaseViewModel {
   void navigateToDetailsPage() {
     _navigationService.replaceWithDetailsView();
   }
+  
+  void navigateToExperiencesPage() {
+    _navigationService.replaceWithExperiencesView();
+  }
 
   void navigateToHomePage() {
     _navigationService.replaceWithHomeView();

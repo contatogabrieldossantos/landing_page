@@ -20,8 +20,6 @@ class HomeView extends StackedView<HomeViewModel> {
           child: Center(
             child: 
                 Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.center,
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     const Text(

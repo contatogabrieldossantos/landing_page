@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:landing_app/ui/charts/bar_chart/skills_chart.dart';
 import 'package:landing_app/ui/common/app_strings.dart';
 import 'package:landing_app/ui/drawer/drawer.dart';
 import 'package:stacked/stacked.dart';
@@ -21,7 +20,7 @@ class DetailsView extends StackedView<DetailsViewModel> {
   ) {
     return Scaffold(
       key: _key,
-      drawer: DrawerWidget(),
+      drawer: const DrawerWidget(),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 25.0),
@@ -31,6 +30,8 @@ class DetailsView extends StackedView<DetailsViewModel> {
               children: [
                 verticalSpaceLarge,
                 Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     AppBar(
                       leading: GestureDetector(
@@ -47,7 +48,26 @@ class DetailsView extends StackedView<DetailsViewModel> {
                         fontWeight: FontWeight.w900,
                       ),
                     ),
-                    const SkillsChart(),
+                    verticalSpaceSmall,
+                    const Text(
+                      educationalDescription,
+                      style: styleDetails,
+                    ),
+                    verticalSpaceTiny,
+                    const ListTile(
+                      title: Text('Bachelor in Computer Science', style: styleDetails,),
+                      subtitle: Text('Unisul, Tubarão SC (BRA), Mar 2012 - Apr 2020', style: styleDetails),
+                      leading: Icon(Icons.school),
+                    ),
+                    verticalSpaceSmall,
+                    const Text(
+                      technicalSkillsDescription,
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w900,
+                      ),
+                    ),
+                    verticalSpaceSmall,
                     const Text(
                       ksDetailsStorieBottomSheetDescriptionBottom,
                       style: TextStyle(
@@ -55,6 +75,7 @@ class DetailsView extends StackedView<DetailsViewModel> {
                         fontWeight: FontWeight.w900,
                       ),
                     ),
+                    
                     verticalSpaceMedium,
                   ],
                 ),

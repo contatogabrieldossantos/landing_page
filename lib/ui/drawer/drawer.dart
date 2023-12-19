@@ -19,11 +19,14 @@ class DrawerWidget extends StackedView<DrawerViewModel> {
       child: ListView(
         padding: EdgeInsets.zero,
         children: [
-          const DrawerHeader(
-            decoration: BoxDecoration(
+          DrawerHeader(
+            decoration: const BoxDecoration(
               color: Colors.black,
             ),
-            child: Text('Drawer Header', style: TextStyle(color: Colors.white),),
+            child: GestureDetector(
+              child: const Text('Get this simple Flutter code!', style: TextStyle(color: Colors.white)),
+              onTap: (){},
+            ),
           ),
           ListTile(
             title: const Text('Home'),
@@ -34,12 +37,8 @@ class DrawerWidget extends StackedView<DrawerViewModel> {
             onTap: viewModel.navigateToDetailsPage,
           ),
           ListTile(
-            title: const Text('Professional Experiences'),
-            onTap: viewModel.navigateToDetailsPage,
-          ),
-          ListTile(
-            title: const Text('Educational'),
-            onTap: viewModel.navigateToDetailsPage,
+            title: const Text('Work Experiences'),
+            onTap: viewModel.navigateToExperiencesPage,
           ),
         ],
       ),

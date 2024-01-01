@@ -3,9 +3,12 @@ import 'package:landing_app/app/app.bottomsheets.dart';
 import 'package:landing_app/app/app.dialogs.dart';
 import 'package:landing_app/app/app.locator.dart';
 import 'package:landing_app/app/app.router.dart';
+import 'package:landing_app/firebase_options.dart';
 import 'package:stacked_services/stacked_services.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 Future<void> main() async {
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   WidgetsFlutterBinding.ensureInitialized();
   await setupLocator();
   setupDialogUi();

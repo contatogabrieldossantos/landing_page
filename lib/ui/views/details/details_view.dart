@@ -85,7 +85,6 @@ class DetailsView extends StackedView<DetailsViewModel> {
                         fontWeight: FontWeight.w900,
                       ),
                     ),
-                    
                     verticalSpaceMedium,
                   ],
                 ),

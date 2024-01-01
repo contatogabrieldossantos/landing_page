@@ -21,6 +21,16 @@ class ExperiencesView extends StackedView<ExperiencesViewModel> {
   ) {
     return Scaffold(
       key: _key,
+      bottomNavigationBar: MaterialButton(
+        color: kcDarkGreyColor,
+        onPressed: viewModel.showBottomSheet,
+        child: const Text(
+          'Show contacts',
+          style: TextStyle(
+            color: Colors.white,
+          ),
+        ),
+      ),
       drawer: const DrawerWidget(),
       body: SafeArea(
         child: Padding(
@@ -40,18 +50,8 @@ class ExperiencesView extends StackedView<ExperiencesViewModel> {
                         ),
                       ),
                     ),
-                    ...viewModel.experiences.reversed.map((e) => ExperienceWidget(data: ExperienceModel.fromJson(e))).toList()
+                    ...viewModel.experiences.reversed.map((e) => ExperienceWidget(data: ExperienceModel.fromJson(e), initiallyOpened: e == viewModel.experiences.last)).toList()
                   ],
-                ),
-                MaterialButton(
-                  color: kcDarkGreyColor,
-                  onPressed: viewModel.showBottomSheet,
-                  child: const Text(
-                    'Show contacts',
-                    style: TextStyle(
-                      color: Colors.white,
-                    ),
-                  ),
                 ),
               ],
             ),
@@ -62,8 +62,6 @@ class ExperiencesView extends StackedView<ExperiencesViewModel> {
   }
 
   @override
-  ExperiencesViewModel viewModelBuilder(
-    BuildContext context,
-  ) =>
-      ExperiencesViewModel();
+  ExperiencesViewModel viewModelBuilder(BuildContext context) => ExperiencesViewModel();
+
 }

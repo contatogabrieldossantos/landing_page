@@ -7,7 +7,7 @@ class HomeViewModel extends BaseViewModel {
 
   final _navigationService = locator<NavigationService>();
 
-  void navigateToDetailsPage() {
+  void navigateToDetailsPage() async {
     _navigationService.replaceWithDetailsView();
   }
 

@@ -5,7 +5,8 @@ import 'package:landing_app/ui/components/experience_widget/experience_model.dar
 class ExperienceWidget extends StatefulWidget {
 
   final ExperienceModel data;
-  const ExperienceWidget({super.key, required this.data});
+  final bool? initiallyOpened;
+  const ExperienceWidget({super.key, required this.data, this.initiallyOpened});
 
   @override
   State<ExperienceWidget> createState() => _ExperienceWidgetState();
@@ -16,7 +17,7 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
   Widget build(BuildContext context) {
     return ExpansionTile(
       title: Text(widget.data.companyName),
-      initiallyExpanded: false,
+      initiallyExpanded: widget.initiallyOpened ?? true,
       expandedAlignment: Alignment.topLeft,
       expandedCrossAxisAlignment: CrossAxisAlignment.stretch,
       childrenPadding: const EdgeInsets.symmetric(horizontal: 5),

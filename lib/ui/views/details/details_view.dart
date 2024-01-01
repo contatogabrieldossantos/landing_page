@@ -20,6 +20,16 @@ class DetailsView extends StackedView<DetailsViewModel> {
   ) {
     return Scaffold(
       key: _key,
+      bottomNavigationBar: MaterialButton(
+        color: kcDarkGreyColor,
+        onPressed: viewModel.showBottomSheet,
+        child: const Text(
+          'Show contacts',
+          style: TextStyle(
+            color: Colors.white,
+          ),
+        ),
+      ),
       drawer: const DrawerWidget(),
       body: SafeArea(
         child: Padding(
@@ -79,16 +89,6 @@ class DetailsView extends StackedView<DetailsViewModel> {
                     verticalSpaceMedium,
                   ],
                 ),
-                MaterialButton(
-                  color: kcDarkGreyColor,
-                  onPressed: viewModel.showBottomSheet,
-                  child: const Text(
-                    'Show contacts',
-                    style: TextStyle(
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
               ],
             ),
           ),
@@ -98,8 +98,6 @@ class DetailsView extends StackedView<DetailsViewModel> {
   }
 
   @override
-  DetailsViewModel viewModelBuilder(
-    BuildContext context,
-  ) =>
-      DetailsViewModel();
+  DetailsViewModel viewModelBuilder(BuildContext context) => DetailsViewModel();
+
 }

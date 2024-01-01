@@ -24,8 +24,8 @@ class DrawerWidget extends StackedView<DrawerViewModel> {
               color: Colors.black,
             ),
             child: GestureDetector(
+              onTap: viewModel.navigateToRepository,
               child: const Text('Get this simple Flutter code!', style: TextStyle(color: Colors.white)),
-              onTap: (){},
             ),
           ),
           ListTile(
